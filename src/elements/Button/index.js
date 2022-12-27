@@ -5,6 +5,7 @@ import propTypes from "prop-types";
 export default function Button(props) {
   const className = [props.className];
   if (props.isPrimary) className.push("btn-primary");
+  if (props.isLight) className.push("btn-light");
   if (props.isLarge) className.push("btn-lg");
   if (props.isSmall) className.push("btn-sm");
   if (props.isBlock) className.push("btn-block");
@@ -20,9 +21,8 @@ export default function Button(props) {
       <span className={className.join(" ")} style={props.style}>
         {props.isLoading ? (
           <>
-            <span className="spinner-border spinner-border-sm mx-5">
-              <span className="sr-only">Loading...</span>
-            </span>
+            <span className="spinner-border spinner-border-sm mx-5"></span>
+            <span className="sr-only">Loading...</span>
           </>
         ) : (
           props.children
@@ -31,10 +31,10 @@ export default function Button(props) {
     );
   }
 
-  if (props.type === "Link") {
+  if (props.type === "link") {
     if (props.isExternal) {
       return (
-        <a href={props.href} className={className.join(" ")} style={props.style} target={props.target === "_blank" ? "noopener noreferrer" : undefined}>
+        <a href={props.href} className={className.join(" ")} style={props.style} target={props.target === "_blank" ? "_blank" : undefined} rel={props.target === "_blank" ? "noopener noreferrer" : undefined}>
           {props.children}
         </a>
       );
@@ -63,6 +63,7 @@ Button.propType = {
   isDisabled: propTypes.bool,
   isLoading: propTypes.bool,
   isSmall: propTypes.bool,
+  isLight: propTypes.bool,
   isLarge: propTypes.bool,
   isBlock: propTypes.bool,
   isExternal: propTypes.bool,
