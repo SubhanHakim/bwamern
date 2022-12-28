@@ -31,7 +31,7 @@ export default function Button(props) {
     );
   }
 
-  if (props.type === "link") {
+  if (props.type === "Link") {
     if (props.isExternal) {
       return (
         <a href={props.href} className={className.join(" ")} style={props.style} target={props.target === "_blank" ? "_blank" : undefined} rel={props.target === "_blank" ? "noopener noreferrer" : undefined}>
@@ -48,24 +48,25 @@ export default function Button(props) {
   }
 
   return (
-    <Button className={className.join(" ")} style={props.style} onClick={onClick}>
+    <button className={className.join(" ")} style={props.style} onClick={onClick}>
       {props.children}
-    </Button>
+    </button>
   );
 }
 
-Button.propType = {
+Button.propTypes = {
   type: propTypes.oneOf(["button", "Link"]),
-  onclick: propTypes.func,
-  target: propTypes.string,
+  onClick: propTypes.func,
   href: propTypes.string,
+  target: propTypes.string,
   className: propTypes.string,
+  isPrimary: propTypes.bool,
+  isLight: propTypes.bool,
+  isExternal: propTypes.bool,
   isDisabled: propTypes.bool,
   isLoading: propTypes.bool,
   isSmall: propTypes.bool,
-  isLight: propTypes.bool,
   isLarge: propTypes.bool,
   isBlock: propTypes.bool,
-  isExternal: propTypes.bool,
   hasShadow: propTypes.bool,
 };
