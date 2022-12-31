@@ -24,8 +24,8 @@ export default class Checkout extends Component {
       email: "",
       phone: "",
       proofPayment: "",
-      bankName: "",
-      bankHolder: "",
+      bankFrom: "",
+      accountHolder: "",
     },
   };
 
@@ -100,7 +100,7 @@ export default class Checkout extends Component {
               {CurrentStep === "payment" && (
                 <Fade>
                   <Controller>
-                    {data.proofPayment !== "" && data.bankName !== "" && data.bankHolder !== "" && (
+                    {data.proofPayment !== "" && data.bankFrom !== "" && data.accountHolder !== "" && (
                       <Fade>
                         <Button className="btn mb-3" type="button" isBlock isPrimary hasShadow onClick={nextStep}>
                           Continue to Book

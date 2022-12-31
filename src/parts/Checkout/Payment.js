@@ -56,11 +56,11 @@ export default function Payment(props) {
               <label htmlFor="proofPayment">Upload Bukti Transfer</label>
               <InputFile accept="image/*" id="proofPayment" name="proofPayment" value={data.proofPayment} onChange={props.onChange} />
 
-              <label htmlFor="lastName">Last Name</label>
-              <InputText id="lastName" name="lastName" value={data.lastName} onChange={props.onChange} />
+              <label htmlFor="bankFrom">Asal Bank</label>
+              <InputText id="bankFrom" name="bankFrom" value={data.bankFrom} onChange={props.onChange} />
 
-              <label htmlFor="BankHolder">Nama Pengirim</label>
-              <InputText id="BankHolder" name="BankHolder" value={data.BankHolder} type="text" onChange={props.onChange} />
+              <label htmlFor="accountHolder">Nama Pengirim</label>
+              <InputText id="accountHolder" name="accountHolder" value={data.accountHolder} type="text" onChange={props.onChange} />
             </Fade>
           </div>
         </div>
