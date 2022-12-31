@@ -10,6 +10,7 @@ import BookingForm from "parts/BookingForm";
 import Categories from "parts/Categories";
 import Testimony from "parts/Testimony";
 import Footer from "parts/Footer";
+import { Fade } from "react-awesome-reveal";
 
 export default class DetailsPage extends Component {
   componentDidMount() {
@@ -30,10 +31,14 @@ export default class DetailsPage extends Component {
         <section className="container">
           <div className="row">
             <div className="col-7 pr-5">
-              <PageDetailDescription data={ItemDetails} />
+              <Fade direction="up">
+                <PageDetailDescription data={ItemDetails} />
+              </Fade>
             </div>
             <div className="col-5">
-              <BookingForm itemDetails={ItemDetails} />
+              <Fade direction="up">
+                <BookingForm itemDetails={ItemDetails} />
+              </Fade>
             </div>
           </div>
         </section>

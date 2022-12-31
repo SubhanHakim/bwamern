@@ -14,7 +14,7 @@ export default class BookingForm extends Component {
         date: {
           startDate: new Date(),
           endDate: new Date(),
-          key: "Selection",
+          key: "selection",
         },
       },
     };
