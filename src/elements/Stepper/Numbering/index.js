@@ -9,7 +9,7 @@ export default function Numbering({ style, className, data, current }) {
 
   return (
     <Fade>
-      <ol className={["stapper", className].join(" ")} style={style}>
+      <ol className={["stepper", className].join(" ")} style={style}>
         {keysOfData.map((list, index) => {
           let isActive = list === current ? "active" : "";
           if (index + 1 === keysOfData.length) {

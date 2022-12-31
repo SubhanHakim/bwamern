@@ -31,8 +31,10 @@ export default class Checkout extends Component {
 
   onChange = (event) => {
     this.setState({
-      ...this.state.data,
-      [event.target.name]: event.target.value,
+      data: {
+        ...this.state.data,
+        [event.target.name]: event.target.value,
+      },
     });
   };
 
@@ -64,6 +66,7 @@ export default class Checkout extends Component {
         content: <Completed />,
       },
     };
+
     return (
       <>
         <Header isCentered />

@@ -56,8 +56,8 @@ export default function Payment(props) {
               <label htmlFor="proofPayment">Upload Bukti Transfer</label>
               <InputFile accept="image/*" id="proofPayment" name="proofPayment" value={data.proofPayment} onChange={props.onChange} />
 
-              <label htmlFor="BankName">Asal Bank</label>
-              <InputText id="BankName" name="BankName" value={data.BankName} type="text" onChange={props.onChange} />
+              <label htmlFor="lastName">Last Name</label>
+              <InputText id="lastName" name="lastName" value={data.lastName} onChange={props.onChange} />
 
               <label htmlFor="BankHolder">Nama Pengirim</label>
               <InputText id="BankHolder" name="BankHolder" value={data.BankHolder} type="text" onChange={props.onChange} />
