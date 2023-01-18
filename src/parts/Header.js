@@ -1,13 +1,11 @@
 import React from "react";
 import Button from "elements/Button";
 import BrandIcon from "parts/IconText";
-import { useLocation } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 
 export default function Header(props) {
-  const location = useLocation();
   const getNavLinkClass = (path) => {
-    return location.pathname === path ? " active" : "";
+    return props.location.pathname === path ? " active" : "";
   };
 
   if (props.isCentered)
