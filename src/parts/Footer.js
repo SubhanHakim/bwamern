@@ -15,17 +15,17 @@ export default function Footer() {
             <h6 className="mt-2">For Beginners</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
-                <Button type="Link" href="/register">
+                <Button type="link" href="/register">
                   New Account
                 </Button>
               </li>
               <li className="list-group-item">
-                <Button type="Link" href="/properties">
+                <Button type="link" href="/properties">
                   Start Booking a Room
                 </Button>
               </li>
               <li className="list-group-item">
-                <Button type="Link" href="/use-payment">
+                <Button type="link" href="/use-payment">
                   Use Payments
                 </Button>
               </li>
@@ -35,17 +35,17 @@ export default function Footer() {
             <h6 className="mt-2">Explore Us</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
-                <Button type="Link" href="/careers">
+                <Button type="link" href="/careers">
                   Our Carrers
                 </Button>
               </li>
               <li className="list-group-item">
-                <Button type="Link" href="/privacy">
+                <Button type="link" href="/privacy">
                   Privacy
                 </Button>
               </li>
               <li className="list-group-item">
-                <Button type="Link" href="/terms">
+                <Button type="link" href="/terms">
                   Terms & Conditions
                 </Button>
               </li>
@@ -55,12 +55,12 @@ export default function Footer() {
             <h6 className="mt-2">Connect Us</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
-                <Button isExternal type="Link" href="mailto:support@staycation.id">
+                <Button isExternal type="link" href="mailto:support@staycation.id">
                   support@staycation.id
                 </Button>
               </li>
               <li className="list-group-item">
-                <Button isExternal type="Link" href="tel:+622122081996">
+                <Button isExternal type="link" href="tel:+622122081996">
                   021 - 2208 - 1996
                 </Button>
               </li>

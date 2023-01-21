@@ -16,7 +16,7 @@ export default function BreadCrumb(props) {
               {index === props.data.length - 1 ? (
                 item.pageTitle
               ) : (
-                <Button type="Link" href={item.pageHref}>
+                <Button type="link" href={item.pagehref}>
                   {item.pageTitle}
                 </Button>
               )}

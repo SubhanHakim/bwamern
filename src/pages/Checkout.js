@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 // Import stepper
 import Stepper from "elements/Stepper";
@@ -16,7 +17,7 @@ import Payment from "parts/Checkout/Payment";
 import Completed from "parts/Checkout/Completed";
 import Button from "elements/Button";
 
-export default class Checkout extends Component {
+class Checkout extends Component {
   state = {
     data: {
       firstName: "",
@@ -44,10 +45,23 @@ export default class Checkout extends Component {
 
   render() {
     const { data } = this.state;
+    const { checkout } = this.props;
 
-    const checkout = {
-      duration: 3,
-    };
+    if (!checkout)
+      return (
+        <div className="container">
+          <div className="row align-items-center justify-content-center text-center" style={{ height: "100vh" }}>
+            <div className="col-3">
+              Pilih kamar dulu
+              <div>
+                <Button className="btn mt-5" type="button" onClick={() => this.props.history.goBack()} isLight>
+                  Back
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
 
     const steps = {
       bookingInformation: {
@@ -90,7 +104,7 @@ export default class Checkout extends Component {
                         </Button>
                       </Fade>
                     )}
-                    <Button className="btn" type="Link" isBlock isLight href={`/properties/${ItemDetails._id}`}>
+                    <Button className="btn" type="link" isBlock isLight href={`/properties/${ItemDetails._id}`}>
                       Cancel
                     </Button>
                   </Controller>
@@ -113,6 +127,13 @@ export default class Checkout extends Component {
                   </Controller>
                 </Fade>
               )}
+              {CurrentStep === "completed" && (
+                <Controller>
+                  <Button className="btn" type="link" isBlock isPrimary hasShadow href="">
+                    Back To Home
+                  </Button>
+                </Controller>
+              )}
             </>
           )}
         </Stepper>
@@ -120,3 +141,9 @@ export default class Checkout extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  checkout: state.checkout,
+});
+
+export default connect(mapStateToProps)(Checkout);

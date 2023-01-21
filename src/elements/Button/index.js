@@ -31,7 +31,7 @@ export default function Button(props) {
     );
   }
 
-  if (props.type === "Link") {
+  if (props.type === "link") {
     if (props.isExternal) {
       return (
         <a href={props.href} className={className.join(" ")} style={props.style} target={props.target === "_blank" ? "_blank" : undefined} rel={props.target === "_blank" ? "noopener noreferrer" : undefined}>
@@ -55,7 +55,7 @@ export default function Button(props) {
 }
 
 Button.propTypes = {
-  type: propTypes.oneOf(["button", "Link"]),
+  type: propTypes.oneOf(["button", "link"]),
   onClick: propTypes.func,
   href: propTypes.string,
   target: propTypes.string,
